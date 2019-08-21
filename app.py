@@ -24,7 +24,8 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
 df = None
-
+keyFile = open('mapboxkey.txt','r')
+mapbox_access_token = keyFile.readline().rstrip()
 def load_data():
     # use creds to create a client to interact with the Google Drive API
     scope = ['https://spreadsheets.google.com/feeds',
@@ -88,7 +89,7 @@ project_id = "'test_project_id'"
 df = load_data()
 
 # Create global chart template
-mapbox_access_token = "pk.eyJ1IjoibW9jYWlybyIsImEiOiJjanpsbHJ6cW4weDA3M25wcDhoZHJla201In0.ufg3StHaa-QJCariH4aVZA"
+
 layout = dict(
     autosize=True,
     automargin=True,
@@ -374,5 +375,5 @@ app.component_suites = [
 ]
 # Main
 if __name__ == "__main__":
-    app.run_server(debug=False, host='0.0.0.0', port=8080) # for deploying to gae
-    # app.run_server(debug=True)
+    #app.run_server(debug=False, port=8080) # for deploying to gae
+    app.run_server(debug=True)
