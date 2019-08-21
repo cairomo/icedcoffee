@@ -1,0 +1,6 @@
+runtime: python37
+entrypoint: gunicorn -b :$PORT app:flask_app
+env: flex
+
+runtime_config:
+    python_version: 3
