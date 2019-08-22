@@ -375,5 +375,5 @@ app.component_suites = [
 ]
 # Main
 if __name__ == "__main__":
-    #app.run_server(debug=False, port=8080) # for deploying to gae
-    app.run_server(debug=True)
+    app.run_server(debug=False, port=8080) # for deploying to gae
+    # app.run_server(debug=True)
